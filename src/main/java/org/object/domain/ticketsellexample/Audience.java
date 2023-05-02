@@ -1,4 +1,4 @@
-package org.object.domain;
+package org.object.domain.ticketsellexample;
 
 public class Audience {
     private Bag bag;

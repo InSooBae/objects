@@ -1,7 +1,8 @@
-package org.object.domain;
+package org.object.domain.ticketsellexample;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.object.domain.ticketsellexample.*;
 
 import java.time.LocalDateTime;
 
