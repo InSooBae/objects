@@ -10,18 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TicketTest {
 
     @Test
-    @DisplayName("관람객에게 초대장을 보냄")
-    public void invitationTest() throws Exception {
-        //given
-        Invitation invitation = new Invitation(LocalDateTime.of(2023, 4, 28, 18, 0));
-        Audience audience = new Audience(new Bag(null, null, 0L));
-        //when
-        invitation.invite(audience);
-        //then
-        assertTrue(audience.hasInvitation());
-    }
-
-    @Test
     @DisplayName("초대장 일자 생성")
     public void invitationDateTest() {
         Invitation invitation = new Invitation(LocalDateTime.of(2023, 4, 28, 18, 0));

@@ -15,6 +15,6 @@ public class Invitation {
 
 
     public void invite(Audience audience) {
-        audience.setInvitation(this);
+        audience.punched(this);
     }
 }

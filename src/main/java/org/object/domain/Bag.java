@@ -17,7 +17,7 @@ public class Bag {
 
     public long payAmount(long amount) {
         if (getAmount() < amount) throw new RuntimeException("금액 부족");
-        this.amount -= amount;
+        minusAmount(amount);
         return amount;
     }
     public long getAmount() {
@@ -32,7 +32,7 @@ public class Bag {
         this.invitation = invitation;
     }
 
-    public boolean hasInvitation() {
+    private boolean hasInvitation() {
         return invitation != null;
     }
 
@@ -50,5 +50,21 @@ public class Bag {
 
     public void deleteInvitation() {
         invitation = null;
+    }
+
+    private void minusAmount(long amount) {
+        this.amount -= amount;
+    }
+
+    public long hold(Ticket ticket) {
+        long paidAmount = 0L;
+        if (!hasInvitation()) paidAmount = payAmount(ticket.getFee());
+        else deleteInvitation();
+        setTicket(ticket);
+        return paidAmount;
+    }
+
+    public void hold(Invitation invitation) {
+        setInvitation(invitation);
     }
 }

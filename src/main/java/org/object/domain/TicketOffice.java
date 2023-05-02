@@ -17,8 +17,16 @@ public class TicketOffice {
     }
 
 
-    public Ticket pickTicket() {
+    private Ticket pickTicket() {
         if (tickets.isEmpty()) throw new RuntimeException("티켓 부족");
         return tickets.poll();
+    }
+
+    private void plusAmount(long amount) {
+        this.amount += amount;
+    }
+
+    public void sellTicketTo(Audience audience) {
+        plusAmount(audience.buy(pickTicket()));
     }
 }
